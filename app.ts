@@ -49,6 +49,7 @@ app.use(
 // });
 
 // 初始化路由中间件
-app.use(routers.routes()).use(routers.allowedMethods());
+// @ts-ignore
+routers.routing(app);
 
 app.listen(config.port);

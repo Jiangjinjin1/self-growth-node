@@ -1,8 +1,22 @@
 import Router from "koa-router";
-import home from "./home";
+import fs from "fs";
+import path from "path";
+import log4js from "@/server/utils/Log4jsUtil";
 
-const router = new Router();
+const routers = new Router();
+const log = log4js.getLogger("cps:routers-index");
 
-router.use("/", home.routes(), home.allowedMethods());
+export default {
+  routing(app: any) {
+    const files = fs.readdirSync(__dirname);
+    files.forEach((item) => {
+      const routeBaseName = path.basename(item, ".ts");
+      if (routeBaseName === "index") return;
+      const route = require(path.resolve(__dirname, item)).default;
+      log.debug(routeBaseName);
 
-export default router;
+      routers.use(`/${routeBaseName}`, route.routes(), route.allowedMethods());
+      app.use(routers.routes()).use(routers.allowedMethods());
+    });
+  },
+};
