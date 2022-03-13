@@ -1,14 +1,27 @@
 {
     "name": "self-growth-node",
+    "description": "A background application interface for listening to books and videos",
     "version": "1.0.0",
     "main": "dist/app.js",
-    "author": "jiangliuxinbaby@sina.com",
+    "author": {
+        "name": "jinjinjiang",
+        "email": "jjjisbest@sina.com",
+        "url": "https://github.com/Jiangjinjin1/"
+    },
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:Jiangjinjin1/self-growth-node.git"
+    },
     "_moduleAliases": {
         "@": "."
     },
     "bin": {
         "sql-server-db": "./bin/db"
+    },
+    "engines": {
+        "node": ">= 6.0",
+        "npm": ">= 3.10.8"
     },
     "scripts": {
         "dev": "ts-node-dev --respawn ./app.ts",
