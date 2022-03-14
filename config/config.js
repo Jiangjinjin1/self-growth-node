@@ -10,7 +10,7 @@ config.development = {
     port: process.env.RDS_PORT || 3306,
     dialect: "mysql",
     logging: false,
-    operatorsAliases: false,
+    // operatorsAliases: false,
   },
   redis: {
     default: {

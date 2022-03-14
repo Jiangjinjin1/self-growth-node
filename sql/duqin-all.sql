@@ -9,17 +9,19 @@ CREATE TABLE `user` (
   `type`varchar(32) DEFAULT 'NORMAL_USER' COMMENT '角色 NORMAL_USER DQ_SINGER DQ_OFFICIAL_ACCOUNT',
   `musicCount` int(10) DEFAULT 0 COMMENT '',
   `musicPlayCount` int(10) DEFAULT 0 COMMENT '',
+  `createdAt` int(10) DEFAULT 0 COMMENT '创建时间戳',
+  `updatedAt` int(10) DEFAULT 0 COMMENT '更新的时间戳',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'https://wx.qlogo.cn/mmhead/bmBPCMraoKGLgywcNIDAVM4l0IoECLyqNlSheZYfpkY/132', 'xbss', 'DQ_OFFICIAL_ACCOUNT', 0, 0);
-INSERT INTO `user` VALUES ('2', 'https://wx.qlogo.cn/mmhead/sfYdEibamQEd7nQgAWfcFWunW36icr23gzAdXAh0UmEvo/132', '超甜的布丁', 'DQ_SINGER', 30, 567);
-INSERT INTO `user` VALUES ('3', 'https://wx.qlogo.cn/mmhead/gBSelbQM7M19TeazvLwo3f8znKS8KR1CuibicFHc1GTWI/132', '暮色上浓妆', 'DQ_SINGER', 47, 2346);
-INSERT INTO `user` VALUES ('4', 'https://thirdwx.qlogo.cn/mmhead/Izdzuf4uOPicNHHV7hUMlibFVv79ZKARBTIzLTXoS8uYg/132', '独留清风醉', 'NORMAL_USER', 0, 0);
-INSERT INTO `user` VALUES ('5', 'https://wx.qlogo.cn/mmhead/S4hqPXo1jhJXO93CrSnZwwEpGy5SErdSsibJyM2gib9vk/132', '嘴角的樱桃汁', 'NORMAL_USER', 0, 0);
+INSERT INTO `user` VALUES ('1', 'https://wx.qlogo.cn/mmhead/bmBPCMraoKGLgywcNIDAVM4l0IoECLyqNlSheZYfpkY/132', 'xbss', 'DQ_OFFICIAL_ACCOUNT', 0, 0, UNIX_TIMESTAMP(NOW()), UNIX_TIMESTAMP(NOW()));
+INSERT INTO `user` VALUES ('2', 'https://wx.qlogo.cn/mmhead/sfYdEibamQEd7nQgAWfcFWunW36icr23gzAdXAh0UmEvo/132', '超甜的布丁', 'DQ_SINGER', 30, 567, UNIX_TIMESTAMP(NOW()), UNIX_TIMESTAMP(NOW()));
+INSERT INTO `user` VALUES ('3', 'https://wx.qlogo.cn/mmhead/gBSelbQM7M19TeazvLwo3f8znKS8KR1CuibicFHc1GTWI/132', '暮色上浓妆', 'DQ_SINGER', 47, 2346, UNIX_TIMESTAMP(NOW()), UNIX_TIMESTAMP(NOW()));
+INSERT INTO `user` VALUES ('4', 'https://thirdwx.qlogo.cn/mmhead/Izdzuf4uOPicNHHV7hUMlibFVv79ZKARBTIzLTXoS8uYg/132', '独留清风醉', 'NORMAL_USER', 0, 0, UNIX_TIMESTAMP(NOW()), UNIX_TIMESTAMP(NOW()));
+INSERT INTO `user` VALUES ('5', 'https://wx.qlogo.cn/mmhead/S4hqPXo1jhJXO93CrSnZwwEpGy5SErdSsibJyM2gib9vk/132', '嘴角的樱桃汁', 'NORMAL_USER', 0, 0, UNIX_TIMESTAMP(NOW()), UNIX_TIMESTAMP(NOW()));
 
 -- ----------------------------
 -- Table structure for song

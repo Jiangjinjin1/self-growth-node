@@ -9,9 +9,9 @@ import redisStore from "koa-redis";
 import views from "koa-views";
 import koaStatic from "koa-static";
 import path from "path";
-import log4js from "@/server/utils/Log4jsUtil";
+import log4js from "@/utils/Log4jsUtil";
 import config from "@/config/config";
-import routers from "@/server/routers";
+import routers from "@/routers";
 
 const app = new Koa();
 

@@ -1,0 +1,10 @@
+/**
+ * 用户角色枚举
+ * NORMAL_USER DQ_SINGER DQ_OFFICIAL_ACCOUNT
+ *
+ */
+export const userTypeEnum = {
+  NORMAL_USER: "NORMAL_USER",
+  DQ_SINGER: "DQ_SINGER",
+  DQ_OFFICIAL_ACCOUNT: "DQ_OFFICIAL_ACCOUNT",
+};

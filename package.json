@@ -14,7 +14,8 @@
         "url": "git@github.com:Jiangjinjin1/self-growth-node.git"
     },
     "_moduleAliases": {
-        "@": "."
+        "@": ".",
+        "@utils": "./utils/"
     },
     "bin": {
         "sql-server-db": "./bin/db"
@@ -52,6 +53,7 @@
         "@types/koa-redis": "^4.0.2",
         "@types/koa-router": "^7.4.4",
         "@types/koa-static": "^4.0.2",
+        "@types/lodash": "^4.14.179",
         "@types/node": "^17.0.21",
         "@typescript-eslint/eslint-plugin": "^5.14.0",
         "@typescript-eslint/parser": "^5.14.0",

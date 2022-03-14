@@ -12,7 +12,7 @@ export default {
     'FILE_ERROR': {
       type: 'datefile',
       filename: './logger/error.log',
-      daysToKeep: 30,
+      numBackups: 30,
       keepFileExt: true
     }
   },
