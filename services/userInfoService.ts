@@ -3,25 +3,30 @@ import models from "../models";
 import { UserInfoType } from "../types/types";
 
 class UserInfoService {
-  static async getUserList(options: UserInfoType) {
+  static async getList(options: UserInfoType) {
     const { page = 1, pageSize = 10, type = "" } = options || {};
-    console.log(Number(pageSize));
-    console.log((Number(page) - 1) * Number(pageSize));
 
-    try {
-      const result = await models.User.findAndCountAll({
-        where: {
-          type: {
-            [Op.eq]: type,
-          },
+    const result = await models.User.findAndCountAll({
+      where: {
+        type: {
+          [Op.eq]: type,
         },
-        offset: (Number(page) - 1) * Number(pageSize),
-        limit: Number(pageSize),
-      });
-      return result || [];
-    } catch (e) {
-      throw e;
-    }
+      },
+      offset: (Number(page) - 1) * Number(pageSize),
+      limit: Number(pageSize),
+    });
+    return result || {};
+  }
+
+  static async getInfo(id: number | string) {
+    const userInfo = await models.User.findOne({
+      where: {
+        id: {
+          [Op.eq]: id,
+        },
+      },
+    });
+    return userInfo || {};
   }
 }
 

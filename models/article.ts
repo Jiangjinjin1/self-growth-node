@@ -2,7 +2,15 @@ import { Model } from "sequelize";
 
 /**文章表 */
 export default (sequelize: any, DataTypes: any) => {
-  class Article extends Model {}
+  class Article extends Model {
+    static associate(models: any) {
+      // define association here
+      this.belongsTo(models.User, {
+        foreignKey: "userId",
+        as: "userInfo", // 定义User模型别名,在Song成生成userInfo节点
+      });
+    }
+  }
   Article.init(
     {
       id: {
@@ -17,6 +25,10 @@ export default (sequelize: any, DataTypes: any) => {
       coverUrlList: {
         type: DataTypes.STRING,
         defaultValue: "",
+        get() {
+          const coverUrlListValue = this.getDataValue("coverUrlList");
+          return coverUrlListValue.split(",") || [];
+        },
       },
       title: {
         type: DataTypes.STRING(64),

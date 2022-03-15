@@ -2,7 +2,15 @@ import { Model } from "sequelize";
 /**歌曲表 */
 
 export default (sequelize: any, DataTypes: any) => {
-  class Song extends Model {}
+  class Song extends Model {
+    static associate(models: any) {
+      // define association here
+      this.belongsTo(models.User, {
+        foreignKey: "userId",
+        as: "userInfo", // 定义User模型别名,在Song成生成userInfo节点
+      });
+    }
+  }
 
   Song.init(
     {

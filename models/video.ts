@@ -2,7 +2,15 @@ import { Model } from "sequelize";
 
 /**文章表 */
 export default (sequelize: any, DataTypes: any) => {
-  class Video extends Model {}
+  class Video extends Model {
+    static associate(models: any) {
+      // define association here
+      this.belongsTo(models.User, {
+        foreignKey: "userId",
+        as: "userInfo", // 定义User模型别名,在Song成生成userInfo节点
+      });
+    }
+  }
   Video.init(
     {
       id: {
