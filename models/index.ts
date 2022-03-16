@@ -4,7 +4,7 @@ import Sequelize from "sequelize";
 import safeGet from "lodash/get";
 import { IPlainObjectModal } from "../types/types";
 // @ts-ignore
-import log4js from "@utils/Log4jsUtil";
+import log4js from "../utils/Log4jsUtil";
 
 const log = log4js.getLogger("cps:model-index");
 
@@ -24,7 +24,9 @@ const sequelize = new Sequelize(
 fs.readdirSync(__dirname)
   .filter(function (file) {
     return (
-      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".ts"
+      file.indexOf(".") !== 0 &&
+      file !== basename &&
+      [".ts", ".js"].includes(file.slice(-3))
     );
   })
   .forEach(function (file) {
