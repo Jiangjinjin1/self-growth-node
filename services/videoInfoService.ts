@@ -10,7 +10,14 @@ class VideoInfoService {
       limit: Number(pageSize),
     });
 
-    return result || {};
+    const { count, rows } = result || {};
+
+    return {
+      totals: count,
+      data: rows,
+      curPage: page,
+      pages: Math.ceil(count / pageSize),
+    };
   }
 
   static async getInfo(id: number | string) {

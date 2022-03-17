@@ -16,14 +16,11 @@ class SongInfoController {
       pageSize: body.pageSize,
     };
 
-    const { count, rows } = await VideoInfoService.getList(params);
+    const data = await VideoInfoService.getList(params);
     ctx.body = {
       code: responseCodeEnum.success.code,
       msg: responseCodeEnum.success.desc,
-      data: {
-        totals: count || 0,
-        list: rows || [],
-      },
+      data,
     };
   }
 

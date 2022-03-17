@@ -16,14 +16,11 @@ class ArticleInfoController {
       pageSize: body.pageSize,
     };
 
-    const { count, rows } = await ArticleInfoService.getList(params);
+    const data = await ArticleInfoService.getList(params);
     ctx.body = {
       code: responseCodeEnum.success.code,
       msg: responseCodeEnum.success.desc,
-      data: {
-        totals: count || 0,
-        list: rows || [],
-      },
+      data,
     };
   }
 

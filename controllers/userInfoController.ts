@@ -16,14 +16,11 @@ class UserInfoController {
     };
 
     if (params.type) {
-      const { count, rows } = await UserInfoService.getList(params);
+      const data = await UserInfoService.getList(params);
       ctx.body = {
         code: responseCodeEnum.success.code,
         msg: responseCodeEnum.success.desc,
-        data: {
-          totals: count || 0,
-          list: rows || [],
-        },
+        data,
       };
     } else {
       ctx.body = {
