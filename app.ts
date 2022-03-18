@@ -32,6 +32,19 @@ app.use(convert(koaLogger()));
 // 配置ctx.body解析中间件
 app.use(bodyParser());
 
+// 打印请求参数
+app.use(async (ctx: Koa.Context, next: Function) => {
+  const query = ctx.query;
+  const body = ctx.request.body;
+
+  log.info(
+    `request-query: ${JSON.stringify(query)}::::request-body:${JSON.stringify(
+      body
+    )}`
+  );
+  await next();
+});
+
 // 配置静态资源加载中间件
 app.use(convert(koaStatic(path.join(__dirname, "./static"))));
 
