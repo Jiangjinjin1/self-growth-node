@@ -7,4 +7,21 @@ export const userTypeEnum = {
   NORMAL_USER: "NORMAL_USER",
   DQ_SINGER: "DQ_SINGER",
   DQ_OFFICIAL_ACCOUNT: "DQ_OFFICIAL_ACCOUNT",
+  VIRTUAL_USER: "VIRTUAL_USER",
+  GUEST: "GUEST",
+  CERTIFICATION_USER: "CERTIFICATION_USER",
+  DQ_EXPERT: "DQ_EXPERT",
+  ADMIN: "ADMIN",
+};
+
+// 中文对照
+export const userTypeCNEnum = {
+  VIRTUAL_USER: "虚拟用户",
+  GUEST: "游客",
+  NORMAL_USER: "普通用户",
+  CERTIFICATION_USER: "实名用户",
+  DQ_EXPERT: "读亲达人",
+  DQ_SINGER: "读亲歌手",
+  DQ_OFFICIAL_ACCOUNT: "读亲号",
+  ADMIN: "管理员",
 };

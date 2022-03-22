@@ -22,6 +22,11 @@ INSERT INTO `user` VALUES ('2', 'https://wx.qlogo.cn/mmhead/sfYdEibamQEd7nQgAWfc
 INSERT INTO `user` VALUES ('3', 'https://wx.qlogo.cn/mmhead/gBSelbQM7M19TeazvLwo3f8znKS8KR1CuibicFHc1GTWI/132', '暮色上浓妆', 'DQ_SINGER', 47, 2346, UNIX_TIMESTAMP(NOW()), UNIX_TIMESTAMP(NOW()));
 INSERT INTO `user` VALUES ('4', 'https://thirdwx.qlogo.cn/mmhead/Izdzuf4uOPicNHHV7hUMlibFVv79ZKARBTIzLTXoS8uYg/132', '独留清风醉', 'NORMAL_USER', 0, 0, UNIX_TIMESTAMP(NOW()), UNIX_TIMESTAMP(NOW()));
 INSERT INTO `user` VALUES ('5', 'https://wx.qlogo.cn/mmhead/S4hqPXo1jhJXO93CrSnZwwEpGy5SErdSsibJyM2gib9vk/132', '嘴角的樱桃汁', 'NORMAL_USER', 0, 0, UNIX_TIMESTAMP(NOW()), UNIX_TIMESTAMP(NOW()));
+INSERT INTO `user` VALUES ('6', 'https://img1.baidu.com/it/u=3622537435,366878945&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=400', '摸脸的女孩', 'VIRTUAL_USER', 0, 0, UNIX_TIMESTAMP(NOW()), UNIX_TIMESTAMP(NOW()));
+INSERT INTO `user` VALUES ('7', 'https://img0.baidu.com/it/u=3414736213,1970382978&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500', '匿名游客', 'GUEST', 0, 0, UNIX_TIMESTAMP(NOW()), UNIX_TIMESTAMP(NOW()));
+INSERT INTO `user` VALUES ('8', 'https://img1.baidu.com/it/u=2952455614,3239577502&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=400', '实名用户', 'CERTIFICATION_USER', 0, 0, UNIX_TIMESTAMP(NOW()), UNIX_TIMESTAMP(NOW()));
+INSERT INTO `user` VALUES ('9', 'https://img1.baidu.com/it/u=322880833,3674179551&fm=253&fmt=auto&app=138&f=JPEG?w=450&h=450', '读亲达人', 'DQ_EXPERT', 0, 0, UNIX_TIMESTAMP(NOW()), UNIX_TIMESTAMP(NOW()));
+INSERT INTO `user` VALUES ('10', 'https://img0.baidu.com/it/u=2925409626,2180250180&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=400', '管理员', 'ADMIN', 0, 0, UNIX_TIMESTAMP(NOW()), UNIX_TIMESTAMP(NOW()));
 
 -- ----------------------------
 -- Table structure for song
